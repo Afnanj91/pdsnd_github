@@ -12,6 +12,9 @@ explore data at bikeshare for 3 cities at US in Washington , New_yourk_city and 
 
 ### Files used
 
+washington.csv
+new_york_city.csv
+chicago.csv
 
 
 
