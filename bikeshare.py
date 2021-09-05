@@ -52,7 +52,7 @@ def get_filters():
         else :
             break
 
-    print('='*50)
+    print('_'*60)
     return city,month,day
 
 
