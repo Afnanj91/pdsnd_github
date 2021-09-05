@@ -8,6 +8,7 @@ bikeshare
 
 ### Description
 
+explore data at bikeshare for 3 cities at US in Washington , New_yourk_city and chicago 
 
 ### Files used
 
