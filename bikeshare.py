@@ -79,8 +79,8 @@ def load_data(city,month,day):
 
     return df
 
-''' ask user if he need to disply raw dat or no '''
 
+# to view data from dataframe
 def disply_data(df) :
     j = 0
     user_descion = input ("Dear sir , whould you like to see raw data or not , please answer yes or no:- ").lower()
@@ -90,7 +90,7 @@ def disply_data(df) :
             break 
         print (df.iloc[j:(j+5)])
         user_descion = input("Dear sir , whould you like to see raw data or not , please answer yes or no:- ").lower()
-        j = j+1
+        j = j+1  #to add more 5 raw data
 
 
 def time_stats(df):
