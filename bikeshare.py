@@ -52,7 +52,7 @@ def get_filters():
         else :
             break
 
-    print('='*50)
+    print('_'*60)
     return city,month,day
 
 
@@ -69,7 +69,7 @@ def load_data(city,month,day):
     df= pd.read_csv(CITY_DATA[city])
     df["Start_Time"] = pd.to_datetime (df["Start Time"])  # new column to format the start time
     df["month"] = df["Start_Time"].dt.month  
-    df["day_of_week"] = df["Start_Time"].dt.weekday_name
+    df["day_of_week"] = df["Start_Time"].dt.day_name()
     if month != "all" :
         months_list = ['january' , 'february', 'march' , 'april' , 'may' , 'june']
         month = months_list.index(month)+1
@@ -155,7 +155,7 @@ def trip_duration_stats(df):
     print('='*50)
 
 
-def user_stats(df):
+def user_stats(df, city):
     """Displays statistics on bikeshare users."""
 
     print('\nCalculating User Stats...\n')
@@ -170,7 +170,7 @@ def user_stats(df):
         
 
     # TO DO: Display earliest, most recent, and most common year of birth
-    if "Birth Year" in df :
+    if city in("chicago", "new_york_city"):
         earliest_year_of_birth = int(df["Birth Year"].min())
         print (f"As per tha avialable data ,the earliest year of birth {earliest_year_of_birth}")
         recent_year_of_birth = int(df["Birth Year"].max())
@@ -190,7 +190,7 @@ def main():
         time_stats(df)
         station_stats(df)
         trip_duration_stats(df)
-        user_stats(df)
+        user_stats(df, city)
         disply_data(df)
                                    
 
